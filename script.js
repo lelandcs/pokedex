@@ -1,6 +1,10 @@
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon";
 const NUMBER = 100;
 
+const capitalize = (str) => {
+  return str[0].toUpperCase() + str.slice(1);
+};
+
 const getPokemonInfo = (num) => {
   const promise = fetch(`${BASE_URL}/${num}`).then((res) => res.json());
   return promise;
@@ -10,7 +14,9 @@ const addPokemonToPage = (pokemon) => {
   const pokedex = document.getElementById("pokedex");
   const pokemonDiv = document.createElement("div");
   pokemonDiv.className = "pokemon";
-  pokemonDiv.innerHTML = `<h2 class="pokemon-name">${pokemon.name}</h2>
+  pokemonDiv.innerHTML = `<h2 class="pokemon-name">${capitalize(
+    pokemon.name
+  )}</h2>
 <div>
   <img
     src=${pokemon.sprites.front_default}
