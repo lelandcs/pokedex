@@ -12,7 +12,7 @@ body {
   text-align: center;
 }
 
-.pokedex-grid {
+#pokedex {
   margin: 0 auto;
   max-width: 72rem;
   display: grid;
